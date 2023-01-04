@@ -41,8 +41,8 @@ class UserInputText extends StatelessWidget {
               Expanded(
                 flex: 5,
                 child: TextFormField(
-                  onFieldSubmitted: (e) {
-                  context.read<ChatModel>().sendChat(e);
+                  onFieldSubmitted: (txt) {
+                  context.read<ChatModel>().sendChat(txt);
                    chatTextController.clear();
                   },
                   

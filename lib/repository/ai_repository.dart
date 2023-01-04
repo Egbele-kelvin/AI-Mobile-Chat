@@ -22,6 +22,9 @@ class OpenAiRepository {
       request.headers.addAll(headers);
 
       http.StreamedResponse response = await request.send();
+        print(response.statusCode);
+         print(response.request);
+          print(response.headers);
       if (response.statusCode == 200) {
         final data = await response.stream.bytesToString();
 

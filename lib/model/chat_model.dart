@@ -15,8 +15,12 @@ class ChatModel extends ChangeNotifier {
   Future<void> sendChat(String txt) async {
     addUserMessage(txt);
 
+  
+
     Map<String, dynamic> response =
         await OpenAiRepository.sendMessage(prompt: txt);
+
+ 
     String text = response['choices'][0]['text'];
     //remove the last item
     messages.removeLast();
